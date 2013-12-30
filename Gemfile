@@ -33,8 +33,10 @@ group :doc do
 end
 
 gem 'hirb'
-
 gem 'devise'
+gem 'omniauth-twitter'
+gem 'omniauth'
+gem 'figaro'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
