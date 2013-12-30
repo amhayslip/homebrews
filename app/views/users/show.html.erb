@@ -1,5 +1,7 @@
-<p><%= @user.name %></p>
+<p><%= @user.name %> Profile Page</p>
 
 <% @user.beers.each do |beer| %>
 <p> <%= link_to beer.name, user_beer_path(@user, beer) %> </p>
 <% end %>
+
+<p> <%= link_to 'New Beer', new_user_beer_path(@user) %> </p>
