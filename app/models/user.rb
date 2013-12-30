@@ -5,11 +5,19 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   has_many :beers
 
+   validates_presence_of :username
+   validates_presence_of :name
+   validates_uniqueness_of :username
+
+
+
+
   def self.from_omniauth(auth)
     where(auth.slice(:provider, :uid)).first_or_create do |user|
       user.provider = auth.provider
       user.uid = auth.uid
       user.username = auth.info.nickname
+      user.name = auth.info.name
     end
   end
 
