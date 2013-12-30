@@ -3,7 +3,7 @@ Homebrews::Application.routes.draw do
 
   root 'home#index'
   devise_for :users, path_names: {sign_in: "login", sign_out: "logout"},
-                   controllers: {omniauth_callbacks: "omniauth_callbacks"}
+                   controllers: {omniauth_callbacks: "omniauth_callbacks", registrations: "registrations"}
   resources :users do
     resources :beers
   end
