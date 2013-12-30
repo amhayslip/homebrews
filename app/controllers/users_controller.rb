@@ -13,6 +13,11 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
+
+  def edit
+    @user = User.find(params[:id])
+  end
+
   def create
     @user = User.new(params[:user])
     if @user.save
@@ -21,6 +26,15 @@ class UsersController < ApplicationController
       render "new"
     end
   end
+
+  def update
+    @user = User.find(params[:id])
+    @user.update(params)
+    redirect_to root_path
+  end
+
+
+
 
 
   

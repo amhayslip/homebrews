@@ -1,6 +1,6 @@
 class BeersController < ApplicationController
   def show
-    @gbeer = Beer.find(params[:id])
+    @beer = Beer.find(params[:id])
   end
   
   def index

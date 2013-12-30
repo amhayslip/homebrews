@@ -4,4 +4,7 @@
 <p> <%= link_to beer.name, user_beer_path(@user, beer) %> </p>
 <% end %>
 
-<p> <%= link_to 'New Beer', new_user_beer_path(@user) %> </p>
+<% if current_user == @user %>
+  <p> <%= link_to 'New Beer', new_user_beer_path(@user) %> </p>
+<% else %>
+<% end %>
