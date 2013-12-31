@@ -11,6 +11,16 @@
   <% end %>
 </ul>
 
+<h2>Friended by Users</h2>
+<ul>
+  <% for user in @user.inverse_friends %>
+    <li><%=h user.name %></li>
+  <% end %>
+
+</ul>
+
+
+
 <% @user.beers.each do |beer| %>
 <p> <%= link_to beer.name, user_beer_path(@user, beer) %> </p>
 <% end %>

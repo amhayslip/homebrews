@@ -38,6 +38,12 @@ gem 'omniauth-twitter'
 gem 'omniauth'
 gem 'figaro'
 
+group :test do
+  gem 'shoulda'
+end
+
+gem 'state_machine'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
