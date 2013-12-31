@@ -1,5 +1,13 @@
 All users
 
-<% @users.each do |user| %>
-  <p><%= link_to user.name, user_path(user.id) %></p>
+
+
+
+
+<% for user in @users %>
+
+  <p><%= user.name %>
+  <%= link_to "Add Friend", friendships_path(:friend_id => user), :method => :post %></p>
+
+
 <% end %>

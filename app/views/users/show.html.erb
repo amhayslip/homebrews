@@ -1,5 +1,16 @@
 <p><%= @user.name %> Profile Page</p>
 
+
+<h2>Friends</h2>
+<ul>
+  <% for friendship in @user.friendships %>
+    <li>
+      <%=h friendship.friend.name %>
+      (<%= link_to "remove", friendship, :method => :delete %>)
+    </li>
+  <% end %>
+</ul>
+
 <% @user.beers.each do |beer| %>
 <p> <%= link_to beer.name, user_beer_path(@user, beer) %> </p>
 <% end %>

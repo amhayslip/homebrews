@@ -1,6 +1,8 @@
 Homebrews::Application.routes.draw do
 
-
+  resources :friendships
+  get "friendship/create"
+  get "friendship/destroy"
   root 'home#index'
   devise_for :users, path_names: {sign_in: "login", sign_out: "logout"},
                    controllers: {omniauth_callbacks: "omniauth_callbacks"}
