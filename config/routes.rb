@@ -1,6 +1,12 @@
 Homebrews::Application.routes.draw do
 
-  resources :friendships
+  resources :friendships do 
+    member do
+      put :accept
+    end
+  end
+
+
   get "friendship/create"
   get "friendship/destroy"
   root 'home#index'

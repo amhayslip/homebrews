@@ -19,8 +19,9 @@ class User < ActiveRecord::Base
   has_many :inverse_friends, through: :inverse_friendships, :source => :user
 
    validates_presence_of :username
-   validates_presence_of :name
    validates_uniqueness_of :username
+   validates_presence_of :first_name, :last_name
+
 
 
 
@@ -30,7 +31,7 @@ class User < ActiveRecord::Base
       user.provider = auth.provider
       user.uid = auth.uid
       user.username = auth.info.nickname
-      user.name = auth.info.name
+      user.location = auth.info.location
     end
   end
 
@@ -55,6 +56,11 @@ class User < ActiveRecord::Base
     else
       super
     end
+  end
+
+
+  def full_name
+    first_name + " " + last_name
   end
 
 

@@ -11,3 +11,7 @@
  *= require_self
  *= require_tree .
  */
+
+.formedit {
+  width: 100px;
+}
